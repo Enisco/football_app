@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/screens/logout/logout_confirmtn.dart';
-import 'package:football_app/screens/payment%20screens/paystack_flutwave.dart';
+import 'package:football_app/screens/payment%20screens/add_card_back.dart';
+import 'package:football_app/screens/payment%20screens/paystack_gateway.dart';
 import 'package:football_app/search_teams_nation/search_teams.dart';
 
 import 'screens/payment screens/addBankAcc.dart';
@@ -23,7 +24,7 @@ class MyFootballApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const SelectScreen(),
-      // home: const FlutterwaveGateway(),
+      // home: const AddCardBack(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -34,6 +35,7 @@ class SelectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -55,7 +57,8 @@ class SelectScreen extends StatelessWidget {
                 pageIndex: 3, pageTitle: 'Neteller Withdrawal Screen'),
             ButtonToPageWidget(
                 pageIndex: 4, pageTitle: 'Paystack/Flutterwave Gateways'),
-            ButtonToPageWidget(pageIndex: 5, pageTitle: 'Logout Alert'),
+            ButtonToPageWidget(pageIndex: 5, pageTitle: 'Add cards'),
+            ButtonToPageWidget(pageIndex: 6, pageTitle: 'Logout Alert'),
           ],
         ),
       ),
@@ -69,6 +72,7 @@ List Pages = [
   AddBankAccount(),
   NetellerWithdrawalScreen(),
   PayStackGateway(),
+  AddCardBack(),
   LogOutConfirmation(),
 ];
 

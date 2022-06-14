@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:football_app/constants.dart';
 import 'package:football_app/search_teams_nation/search_teams.dart';
 
@@ -26,7 +27,12 @@ class _NetellerWithdrawalScreenState extends State<NetellerWithdrawalScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 0, 75, 1),
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         title: const Text(
           'Withdraw',
           style: TextStyle(
@@ -96,7 +102,7 @@ class _NetellerWithdrawalScreenState extends State<NetellerWithdrawalScreen> {
               width: size.width * 0.9,
               height: size.height / 20,
               child: DropdownButton(
-                dropdownColor:blueGreyColor,
+                dropdownColor: blueGreyColor,
                 underline: SizedBox(
                   height: 0,
                   width: 0,
@@ -148,6 +154,7 @@ class _NetellerWithdrawalScreenState extends State<NetellerWithdrawalScreen> {
               height: size.height / 15,
               child: TextField(
                 controller: withdrawalAmountController,
+                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                 keyboardType: TextInputType.number,
                 cursorColor: Colors.black45,
                 style: const TextStyle(
@@ -217,24 +224,22 @@ class _NetellerWithdrawalScreenState extends State<NetellerWithdrawalScreen> {
             Padding(
               padding: EdgeInsets.fromLTRB(
                   size.width * 0.05, size.height * 0.005, size.width * 0.05, 0),
-              child: Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'All',
-                    ),
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'Pending',
-                    ),
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'Successful',
-                    ),
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'Failed',
-                    ),
-                  ],
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'All',
+                  ),
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'Pending',
+                  ),
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'Successful',
+                  ),
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'Failed',
+                  ),
+                ],
               ),
             ),
             //---------------------------------------------------------------------------------------------------------

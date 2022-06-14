@@ -1,11 +1,10 @@
 name: football_app
 description: A new Flutter project.
 
-
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.14.2 <3.0.0"
 
 dependencies:
   flutter:
@@ -13,7 +12,6 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   outline_search_bar: ^2.3.0
-  flutter_svg: ^1.0.3
   currency_picker: ^2.0.11
   rflutter_alert: ^2.0.4
 

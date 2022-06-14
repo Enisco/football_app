@@ -176,7 +176,7 @@ class _SearchTeamsScreenState extends State<SearchTeamsScreen> {
           ),
           //-------------------------------------
 
-          Expanded(
+          SingleChildScrollView(
             child: ListView.builder(
               scrollDirection: Axis.vertical,
               itemCount: teamNameAndLogoList.length,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:football_app/constants.dart';
-import 'package:football_app/screens/payment%20screens/paystack_flutwave.dart';
+import 'package:football_app/screens/payment%20screens/paystack_gateway.dart';
 import 'package:football_app/search_teams_nation/search_teams.dart';
 
 TextEditingController amountController = TextEditingController();
@@ -27,7 +28,12 @@ class _FlutterwaveGatewayState extends State<FlutterwaveGateway> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 0, 75, 1),
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         title: const Text(
           'Flutterwave',
           style: TextStyle(
@@ -187,6 +193,7 @@ class _FlutterwaveGatewayState extends State<FlutterwaveGateway> {
                     height: size.height / 15,
                     child: TextField(
                       keyboardType: TextInputType.number,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                       controller: amountController,
                       cursorColor: Colors.black45,
                       style: const TextStyle(

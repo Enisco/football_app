@@ -27,7 +27,12 @@ class _AddBankAccountState extends State<AddBankAccount> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(0, 0, 75, 1),
-        leading: const Icon(Icons.arrow_back),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         title: const Text(
           'Add Bank Account',
           style: TextStyle(
@@ -268,24 +273,22 @@ class _AddBankAccountState extends State<AddBankAccount> {
             Padding(
               padding: EdgeInsets.fromLTRB(
                   size.width * 0.05, size.height * 0.005, size.width * 0.05, 0),
-              child: Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'All',
-                    ),
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'Pending',
-                    ),
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'Successful',
-                    ),
-                    HistoryButtonsWidget(
-                      HistoryCategoryText: 'Failed',
-                    ),
-                  ],
-                ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'All',
+                  ),
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'Pending',
+                  ),
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'Successful',
+                  ),
+                  HistoryButtonsWidget(
+                    HistoryCategoryText: 'Failed',
+                  ),
+                ],
               ),
             ),
             //---------------------------------------------------------------------------------------------------------

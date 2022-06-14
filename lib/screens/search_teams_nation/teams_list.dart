@@ -75,37 +75,22 @@ class teamData {
 }
 
 final List<teamData> teamNameAndLogoList = [
-  teamData(
-      teamNameText: "Bayern Munich", teamLogoText: "images/Bayern Munich.png"),
-  teamData(
-      teamNameText: "Paris Saint German",
-      teamLogoText: "images/Paris Saint German.png"),
+  teamData(teamNameText: "Bayern Munich", teamLogoText: "images/Bayern.png"),
+  teamData(teamNameText: "Paris Saint German", teamLogoText: "images/psg.png"),
   teamData(teamNameText: "Chelsea", teamLogoText: "images/Chelsea.png"),
-  teamData(
-      teamNameText: "Manchester City",
-      teamLogoText: "images/Manchester City.png"),
+  teamData(teamNameText: "Manchester City", teamLogoText: "images/mancity.png"),
   teamData(teamNameText: "Barcelona", teamLogoText: "images/Barcelona.png"),
   teamData(teamNameText: "Juventus", teamLogoText: "images/Juventus.png"),
-  teamData(
-      teamNameText: "Bayern Munich", teamLogoText: "images/Bayern Munich.png"),
-  teamData(
-      teamNameText: "Paris Saint German",
-      teamLogoText: "images/Paris Saint German.png"),
+  teamData(teamNameText: "Bayern Munich", teamLogoText: "images/Bayern.png"),
+  teamData(teamNameText: "Paris Saint German", teamLogoText: "images/psg.png"),
   teamData(teamNameText: "Chelsea", teamLogoText: "images/Chelsea.png"),
-  teamData(
-      teamNameText: "Manchester City",
-      teamLogoText: "images/Manchester City.png"),
+  teamData(teamNameText: "Manchester City", teamLogoText: "images/mancity.png"),
   teamData(teamNameText: "Barcelona", teamLogoText: "images/Barcelona.png"),
   teamData(teamNameText: "Juventus", teamLogoText: "images/Juventus.png"),
-  teamData(
-      teamNameText: "Bayern Munich", teamLogoText: "images/Bayern Munich.png"),
-  teamData(
-      teamNameText: "Paris Saint German",
-      teamLogoText: "images/Paris Saint German.png"),
+  teamData(teamNameText: "Bayern Munich", teamLogoText: "images/Bayern.png"),
+  teamData(teamNameText: "Paris Saint German", teamLogoText: "images/psg.png"),
   teamData(teamNameText: "Chelsea", teamLogoText: "images/Chelsea.png"),
-  teamData(
-      teamNameText: "Manchester City",
-      teamLogoText: "images/Manchester City.png"),
+  teamData(teamNameText: "Manchester City", teamLogoText: "images/mancity.png"),
   teamData(teamNameText: "Barcelona", teamLogoText: "images/Barcelona.png"),
   teamData(teamNameText: "Juventus", teamLogoText: "images/Juventus.png"),
 ];
