@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:football_app/screens/payment%20screens/add_card_front.dart';
 
 TextEditingController cardNumberController = TextEditingController();
 TextEditingController bankNameController = TextEditingController();
@@ -197,7 +198,13 @@ class _AddCardBackState extends State<AddCardBack> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddCardFront()),
+                            );
+                          },
                     child: Text(
                       'NEXT',
                       style: TextStyle(

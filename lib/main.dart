@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:football_app/screens/comments/comment_page.dart';
 import 'package:football_app/screens/logout/logout_confirmtn.dart';
-import 'package:football_app/screens/payment%20screens/add_card_back.dart';
+import 'package:football_app/screens/payment%20screens/add_card_front.dart';
 import 'package:football_app/screens/payment%20screens/paystack_gateway.dart';
 import 'package:football_app/search_teams_nation/search_teams.dart';
 
@@ -58,7 +59,8 @@ class SelectScreen extends StatelessWidget {
             ButtonToPageWidget(
                 pageIndex: 4, pageTitle: 'Paystack/Flutterwave Gateways'),
             ButtonToPageWidget(pageIndex: 5, pageTitle: 'Add cards'),
-            ButtonToPageWidget(pageIndex: 6, pageTitle: 'Logout Alert'),
+             ButtonToPageWidget(pageIndex: 6, pageTitle: 'Comments Page'),
+            ButtonToPageWidget(pageIndex: 7, pageTitle: 'Logout Alert'),
           ],
         ),
       ),
@@ -72,7 +74,8 @@ List Pages = [
   AddBankAccount(),
   NetellerWithdrawalScreen(),
   PayStackGateway(),
-  AddCardBack(),
+  AddCardFront(),
+  CommentPage(),
   LogOutConfirmation(),
 ];
 

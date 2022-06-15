@@ -184,7 +184,7 @@ class _AddCardFrontState extends State<AddCardFront> {
                             ),
                             contentPadding: const EdgeInsets.all(10.0),
                           ),
-                        ),
+                        ), 
                       ),
                     ),
                     //---------------------------------------
