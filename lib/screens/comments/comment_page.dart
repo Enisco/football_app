@@ -148,7 +148,7 @@ class _CommentBoxAndButtonState extends State<CommentBoxAndButton> {
                         ),
                       );
                       currentIndex = comments.length + 1;
-                      // commentController.text = '';
+                      isTextfieldActive = false;
                     },
                   );
                   commentController.clear();
