@@ -73,7 +73,7 @@ class _CommentWidgetState extends State<CommentWidget> {
                         print('Commented');
                         setState(
                           () {
-                            
+                            myReplies.add('A comment added');
                             // commentController
                           },
                         );
