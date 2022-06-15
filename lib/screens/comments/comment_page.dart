@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:football_app/screens/comments/comment_models.dart';
 import 'package:football_app/screens/comments/comment_widgets.dart';
 
+bool isTextfieldActive = false;
 TextEditingController commentController = TextEditingController();
 String messageString = '';
 CommentModel cModel = CommentModel(
@@ -42,8 +43,9 @@ class _CommentPageState extends State<CommentPage> {
             Positioned(
               top: 5,
               child: SizedBox(
-                height: size.height * 0.8,
-                // height: ,
+                height: isTextfieldActive == true
+                    ? size.height * 0.43
+                    : size.height * 0.8,
                 width: size.width,
                 child: Column(
                   children: [
