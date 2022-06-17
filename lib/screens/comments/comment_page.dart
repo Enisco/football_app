@@ -88,13 +88,7 @@ class _CommentPageState extends State<CommentPage> {
               ),
               //------------------------------------------------------------
 
-              // Positioned(
-              //     bottom: 2,
-              //     child: isCommentReply
-              //         ? const ReplyCommentBoxAndButton()
-              //         : const CommentBoxAndButton()),
               const Positioned(bottom: 2, child: CommentBoxAndButton()),
-              // const Positioned(bottom: 2, child: ReplyCommentBoxAndButton()),
             ],
           ),
         ),
