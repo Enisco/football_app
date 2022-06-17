@@ -181,12 +181,13 @@ class _CommentBoxAndButtonState extends State<CommentBoxAndButton> {
                 if (isCommentReply == true) {
                   setState(
                     () {
-                      comments.add(commentController.text);
-                      eachCommentWidget.add(
-                        ReplyCommentWidget(
-                          commentReply: comments[eachCommentWidget.length],
-                        ),
-                      );
+                      comments.insert(
+                          commentIndex!.toInt() + 1, commentController.text);
+                      eachCommentWidget.insert(
+                          commentIndex!.toInt() + 1,
+                          ReplyCommentWidget(
+                              commentReply:
+                                  comments[commentIndex!.toInt() + 1]));
                       isCommentReply = false;
                     },
                   );

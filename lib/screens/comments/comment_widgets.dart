@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/screens/comments/comment_page.dart';
 
-
 FocusNode myFocusNode = FocusNode();
+int? commentIndex;
 
 class CommentWidget extends StatefulWidget {
   final String? comment;
@@ -89,11 +89,12 @@ class _CommentWidgetState extends State<CommentWidget> {
                         print('Replying to a Comment');
                         setState(
                           () {
+                            commentIndex =
+                                comments.indexOf(widget.comment.toString());
+
                             myFocusNode.requestFocus();
                             isTextfieldActive = true;
                             isCommentReply = true;
-                            // print('The comment is ${commentController.text}');
-                            // myReplies.add(commentController.text);
                           },
                         );
                         print('Is reply: $isCommentReply');
@@ -107,21 +108,6 @@ class _CommentWidgetState extends State<CommentWidget> {
                     ),
                   ),
                 ),
-                // Column(
-                //   children: [
-                //     ListView.builder(
-                //       physics: const ClampingScrollPhysics(),
-                //       shrinkWrap: true,
-                //       padding: const EdgeInsets.all(8),
-                //       itemCount: myReplies.length,
-                //       itemBuilder: (BuildContext context, index) {
-                //         return ReplyCommentWidget(
-                //           commentReply: myReplies[index],
-                //         );
-                //       },
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ),
