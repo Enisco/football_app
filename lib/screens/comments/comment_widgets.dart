@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:football_app/screens/comments/comment_page.dart';
 
+
+FocusNode myFocusNode = FocusNode();
+
 class CommentWidget extends StatefulWidget {
-  final String comment;
+  final String? comment;
 
   const CommentWidget({
     key,
-    required this.comment,
+    this.comment,
   }) : super(key: key);
 
   @override
@@ -15,6 +18,20 @@ class CommentWidget extends StatefulWidget {
 
 class _CommentWidgetState extends State<CommentWidget> {
   List<String> myReplies = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    myFocusNode = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    myFocusNode.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +45,6 @@ class _CommentWidgetState extends State<CommentWidget> {
             radius: size.width / 25,
             backgroundColor: Colors.black45,
             child: Icon(
-              // Icons.perm_identity_sharp,
               cModel.avatar,
               color: Colors.brown,
             ),
@@ -59,7 +75,7 @@ class _CommentWidgetState extends State<CommentWidget> {
                         bottomLeft: Radius.circular(12),
                         bottomRight: Radius.circular(12),
                       )),
-                  child: Text(widget.comment),
+                  child: Text(widget.comment.toString()),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
@@ -70,13 +86,17 @@ class _CommentWidgetState extends State<CommentWidget> {
                     height: size.height / 25,
                     child: TextButton(
                       onPressed: () {
-                        print('Commented');
+                        print('Replying to a Comment');
                         setState(
                           () {
-                            myReplies.add('A comment added');
-                            // commentController
+                            myFocusNode.requestFocus();
+                            isTextfieldActive = true;
+                            isCommentReply = true;
+                            // print('The comment is ${commentController.text}');
+                            // myReplies.add(commentController.text);
                           },
                         );
+                        print('Is reply: $isCommentReply');
                       },
                       child: const Text(
                         'Reply',
@@ -87,20 +107,21 @@ class _CommentWidgetState extends State<CommentWidget> {
                     ),
                   ),
                 ),
-                Column(
-                  children: [
-                    ListView.builder(
-                      physics: const ClampingScrollPhysics(),
-                      shrinkWrap: true,
-                      padding: const EdgeInsets.all(8),
-                      itemCount: myReplies.length,
-                      itemBuilder: (BuildContext context, index) {
-                        return ReplyCommentWidget(
-                            commentReply: myReplies[index]);
-                      },
-                    ),
-                  ],
-                ),
+                // Column(
+                //   children: [
+                //     ListView.builder(
+                //       physics: const ClampingScrollPhysics(),
+                //       shrinkWrap: true,
+                //       padding: const EdgeInsets.all(8),
+                //       itemCount: myReplies.length,
+                //       itemBuilder: (BuildContext context, index) {
+                //         return ReplyCommentWidget(
+                //           commentReply: myReplies[index],
+                //         );
+                //       },
+                //     ),
+                //   ],
+                // ),
               ],
             ),
           ),
@@ -133,6 +154,7 @@ class _ReplyCommentWidgetState extends State<ReplyCommentWidget> {
 
     if (widget.commentReply != '') {
       return Container(
+        padding: EdgeInsets.only(left: size.width / 8.5),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
